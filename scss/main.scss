@@ -1,6 +1,183 @@
-$background-color:red;
+@import "config";
+@import "utilities";
 
-body{
-    background-color: $background-color;
-    color:black;
+// GENERAL STYLES
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Dosis";
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+
+// LOGO
+
+#logo {
+  width: 70px;
+  height: 70px;
+  color: white;
+  text-transform: uppercase;
+}
+
+// main-nav
+
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  ul {
+    display: flex;
+    li {
+      padding: 1rem 1.5rem;
+      a {
+        color: #fff;
+        text-transform: uppercase;
+        border-bottom: 3px transparent solid;
+        padding-bottom: 0.5rem;
+        transition: border-color 0.5s;
+        &:hover {
+          border-color: $medium-color;
+        }
+        &.current {
+          border-color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+// HEADER
+
+#header {
+  &-home {
+    background: $bg-image no-repeat center right / cover;
+    height: 100vh;
+    color: white;
+    // HEADER CONTENT
+    .header-content {
+      text-align: center;
+      padding-top: 20%;
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+#home {
+  // HOME SECTION A
+  &-a {
+    .specials {
+      margin-top: 3rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+    }
+    .fas {
+      color: $main-color;
+      padding-bottom: 0.4rem;
+    }
+  }
+  // HOME SECTION B
+  &-b {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      line-height: 2;
+      &-title {
+        font-size: 1.5rem;
+      }
+      &-number {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      div {
+        padding: 3rem 0;
+        &:nth-child(odd) {
+          background-color: $light-color;
+        }
+        &:nth-child(even) {
+          background-color: $medium-color;
+        }
+      }
+    }
+  }
+
+  // HOME SECTION C
+
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+      // process icon
+      &-icon {
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        background-color: $dark-color;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        // line-height: 70px;
+        position: relative;
+        transition: all 1s;
+        &:hover {
+          background-color: $main-color;
+          width: 90px;
+          height: 90px;
+          padding: 2rem;
+          // line-height: 90px;
+          .process-step {
+            background-color: $dark-color;
+            color: white;
+          }
+        }
+      }
+
+      &-step {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 28px;
+        background-color: $main-color;
+        color: white;
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        // line-height: 15px;
+        padding: 1rem;
+        transition: all 1s;
+      }
+    }
+  }
 }
